@@ -246,7 +246,7 @@ button.cta:hover{
     }
 
     .menu{
-        transform: translateX(600px);
+        transform: translateX(800px);
         flex-direction: column;
         transition: all ease-in-out 0.8s;
         height: 100vh;
@@ -352,6 +352,7 @@ button.cta:hover{
         display: flex; 
         flex-direction: row;
         margin-top: 1.5rem;
+        justify-content: center;
     }
 
     .clients img{
@@ -360,9 +361,3 @@ button.cta:hover{
     }
 
 }
-
-/* @media (min-width: 901px) and (max-width: 1100px){
-    section .right{
-        display: none;
-    }
-} */
