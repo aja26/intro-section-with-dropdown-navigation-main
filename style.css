@@ -180,24 +180,33 @@ button.cta{
 }
 
 @media (max-width:900px){
+    header{
+        display: block;
+    }
+
     .mobile-menu-icon{
         display: block;
         right: 1.25rem;
-        top: 1.25rem;
+        top: 1.5rem;
         position: absolute;
+        background: url('images/icon-menu.svg');
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .mobile-menu-icon.active{
+       background: url('images/icon-close-menu.svg');
     }
 
     .menu nav, .menu .account-area{
-        display: none;
-    }
-
-    .menu.active nav, .menu.active .account-area{
         display: flex;
+        flex-direction: column;
+
     }
 
-    body.active::before {
+    body::before{
         content: '';
-        background-color: rgba(0,0,0,0.5);
         top: 0;
         left: 0;
         right: 0;
@@ -205,18 +214,33 @@ button.cta{
         height: 100vh;
         width: 100vw;
         position: absolute;
+        background: rgba(0,0,0,0);
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+    }
+
+    body.active::before {
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .menu{
+        transform: translateX(1000px);
+        flex-direction: column;
+        transition: all ease-in-out 0.8s;
+        height: 100vh;
+        width: 70vw;
+        padding: 2rem;
+        top: 0;
+        right: 0;
+        align-items: baseline;
+        position: absolute;
     }
 
     .menu.active{
-        flex-direction: column;
-        position: absolute;
-        top: 0;
-        right: 0;
         background-color: var(--almost-white);
-        width: 70vw;
-        height: 100vh;
-        padding: 2rem;
-        align-items: baseline;
+        transform: translateX(0px);
     }
 
     nav, nav ul li{
@@ -241,13 +265,19 @@ button.cta{
         width: 100%;
     }
 
+    /* nav ul li.sub-menu.active:hover{
+        display: none;
+    } */
+
     nav ul li:hover ul.sub-menu{
         display: none;
     }
 
-    nav ul.sub-menu.active{
+    nav ul li ul.sub-menu.active{
         display: block;
         flex-direction: column;
+        box-shadow: none;
+        background-color: var(--almost-white);
         position: relative;
         top: 0rem;
         left: 0.5rem;
@@ -255,6 +285,7 @@ button.cta{
         padding: 1rem 0.5rem 0.5rem;
         width: 10rem;
         margin-bottom: 0rem;
+
     }
 
     ul.sub-menu.active li{
