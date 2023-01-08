@@ -325,8 +325,15 @@ button.cta:hover{
 
     .right{
         background-image: url("images/image-hero-mobile.png");
-        height: 18rem;
+        height: 75vw;
         width: 100%;
+        position: absolute;
+        top: 6rem;
+        margin-bottom: 10rem;
+    }
+
+    .left{
+        margin-top: 75vw;
     }
 
     h1{
